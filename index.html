@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>饿了吗</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/elm.css">
+<script type="text/javascript">
+	(function(win,doc){
+	change();
+	function change(){
+	doc.documentElement.style.fontSize = doc.documentElement.clientWidth *20/320+'px';
+	}
+	win.addEventListener('resize',change,false);
+	win.addEventListener('orientationchange',change,false);
+	})(window,document);
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div id="app"  v-on:scroll='h'>
+	<!-- 固定 -->
+	<router-view></router-view>
+<ul id='gudi'>
+	<a @click='abc1'><router-link to='/a'>
+	<img v-bind:src='img1'><br>
+	<span v-bind:class='{main1}'>外买</span>
+	</router-link></a>
+	<a @click='abc2'><router-link to='/b'>
+	<img v-bind:src='img2'><br>
+	<span v-bind:class='{main2}'>发现</span>
+	</router-link></a>
+	<a @click='abc3'><router-link to='/c'>
+	<img v-bind:src='img3'><br>
+	<span v-bind:class='{main3}'>订单</span>
+	</router-link></a>
+	<a @click='abc4'><router-link to='/d'>
+	<img v-bind:src='img4'><br>
+	<span v-bind:class='{main4}'>我的</span>
+	</router-link></a>
+	</ul>
+</div>
+	<script src='js/elm.js' type="text/javascript"></script>
+</body>
+</html>

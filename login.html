@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>饿了吗登入</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+	<div id="login">
+		<div id="elm">
+			<li style="text-align: center;"><img style="width:140px;height:55px;margin:0 auto;" src="img/elm.png"></li>
+			<li style="text-align:center;font-size:13px;color:blue;margin-top:-8px;">Make Everything 30'</li>
+		<ul id="lurou">
+		<router-link to='/a'><p v-bind:class='{main1}' @click='abc1' class="ma">短信登录</p></router-link>
+		<router-link to='/b'><p v-bind:class='{main2}' @click='abc2' class="ma2">密码登录</p></router-link>
+		</ul>
+		<router-view></router-view>
+      <a href="index.html"><button style="width: 300px;height: 42px;background:#4cd96f;line-height:42px;text-align:center;border:none;border-radius:6px;margin-top:30px;color:white;font-size:16px;">登录</button></a>
+		</div>
+	<div id="bottom">
+	<p style="text-align: center;">所有方：上海拉扎斯信息科技有限公司</p>
+     <p style="text-align: center;"> 增值电信业务许可证 :<a href='###'>沪B2-20150033</a> |
+       <a href='###'>沪ICP备 09007032</a>	|
+       <a href='###'>上海工商行政管理</a>	|
+        <a href='###'>已通过沪公网备案，备案号 310100103568</a></p>
+        <img src="img/img.jpg" alt="">
+        </div>
+	</div>
+	<script type="text/javascript">
+		a={template:`<div>
+			<div style="position:relative;"><input type="text" style="border-radius:4px;border:#ddd 1px solid;width: 288px;height: 48px;padding-left:10px;outline-color:blue;" placeholder='手机号' maxlength='11'>
+		<span style="position:absolute;right:10px;top:14px;color:#ccc;font-size:14px;">获取验证码</span>
+		</div>
+		<input type="text" style="border-radius:4px;border:#ddd 1px solid;width: 288px;height: 48px;padding-left:10px;margin-top:20px;outline-color:blue;" placeholder='验证码' maxlength='8'>
+		<p style="margin-top: 12px;color: #999;font-size: 14px;line-height: 20px;">温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意<a href='###'>《用户服务协议》</a>
+      </p>
+      </div>`}
+		b={template:`<div>
+			<div style="position:relative;"><input type="text" style="border-radius:4px;border:#ddd 1px solid;width: 288px;height: 48px;padding-left:10px; outline-color:blue;" placeholder='手机/邮箱/用户名' maxlength='11'>
+		</div>
+		<input type="password" style="border-radius:4px;border:#ddd 1px solid;width: 288px;height: 48px;padding-left:10px;margin-top:20px;outline-color:blue;" placeholder='密码' maxlength='16'>
+		</div>`}
+		routes=[
+			{path:'/a',component:a},
+			{path:'/b',component:b},
+			 {   path:'*',   redirect:"/a"   }
+			];
+		router=new VueRouter({routes})
+		var a=new Vue({
+			el:'#login',
+			data:{main1:true,main2:false},
+			methods:{
+				abc1:function(){
+					this.main1=true,this.main2=false
+				},
+				abc2:function(){
+					this.main1=false,this.main2=true
+				}
+			},
+			router
+		})
+	</script>
+</body>
+</html>

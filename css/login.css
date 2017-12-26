@@ -1,0 +1,45 @@
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+#elm{
+	padding-top:30px;
+	margin:0 auto;
+	width: 300px;
+}
+#lurou{
+	justify-content:center;display:flex;margin:30px 0 10px 0;
+}
+.ma{
+	color:black;
+	height: 30px;font-size:14px;margin-right:20px;
+}
+.ma2{color:black;
+	height: 30px;font-size:14px;margin-right:20px;
+}
+.main1{
+	color:blue;
+	font-weight:700;
+	border-bottom:2px blue solid; 
+}
+.main2{
+	color:blue;
+	font-weight:700;
+	border-bottom:2px blue solid; 
+}
+#bottom{
+	line-height: 30px;
+	background: silver;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	font-size: 12px;
+	color:#999;
+}
+#bottom a{
+	font-size: 12px;
+	color:#999;
+}

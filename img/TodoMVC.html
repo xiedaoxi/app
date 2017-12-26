@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)file:///C:/Users/Administrator/Desktop/Vue/Vue-6/todo-list/web/index2-%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0.html?### -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>TodoMVC</title>
+		<link rel="stylesheet" href="./TodoMVC_files/index.css">
+
+	</head>
+	<body>
+
+		<section id="app" class="todoapp"><header class="header"><h1>todos</h1> <form action="file:///C:/Users/Administrator/Desktop/Vue/Vue-6/todo-list/web/index2-%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0.html?###"><input placeholder="What needs to be done?" autofocus="autofocus" class="new-todo"></form></header> <section class="main"><input type="checkbox" class="toggle-all"> <label for="toggle-all">Mark all as complete</label> <ul class="todo-list"><li><div class="view"><input type="checkbox" class="toggle"> <label></label> <button class="destroy"></button></div> <input value="Create a TodoMVC template" class="edit"></li> <li><h6>已完成</h6></li> </ul></section> <footer class="footer"><span class="todo-count"><strong>1</strong> item left</span> <button class="clear-completed">Clear completed</button></footer></section>		
+		<script src="./TodoMVC_files/vue-2.4.js.下载"></script>
+		<script type="text/javascript">		
+		var todoVM = new Vue({
+			el:"#app",
+			data:{
+				newTodo:"",
+				todos:[],
+				doneTodos:[]
+			},
+			methods:{
+				add:function(event){					
+					var todo = {
+						title:this.newTodo,
+						isDone:false
+					}
+					this.todos.push(todo);
+					this.newTodo = "";					
+				},
+				select:function(index){
+					var todo = this.todos[index];
+					todo.isDone = true;
+					// 处理完成
+					this.todos.splice(index,1);
+					this.doneTodos.push(todo);
+				},
+				del:function(index){
+					// 删除指定idnex的数组项
+					this.todos.splice(index,1);
+				},
+				clearAll:function(){
+					// this.doneTodos.splice(0,this.doneTodos.length);
+					this.doneTodos = [];
+				}
+			}
+		});
+
+		</script>
+	
+
+</body></html>
